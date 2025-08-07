@@ -21,12 +21,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'npm'  # Add caching for faster installs
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          npm install
+          npx playwright install --with-deps  # Ensure Playwright browsers are installed
 
-      - name: Fix cross-env permissions
-        run: chmod +x ./node_modules/.bin/cross-env
+      - name: Fix binary permissions
+        run: chmod -R +x ./node_modules/.bin  # Fix permissions for ALL binaries
 
       - name: Run All Cucumber Tests (UI + API)
         run: npm run test:all:headless
@@ -34,7 +37,7 @@ jobs:
       - name: Generate Allure Report
         run: |
           npm install -g allure-commandline
-          npm run generate:report
+          allure generate ./allure-results -o ./allure-report --clean  # Directly generate report
         if: always()
 
       - name: Upload Allure Report as Artifact
