@@ -1,0 +1,1 @@
+[{"uid":"ed1f0c07c4c22115","name":"Verify that user can successfully checkout the product","time":{"start":1754598922407,"stop":1754598936365,"duration":13958},"status":"passed","severity":"critical"},{"uid":"31ac7c2e6ad7f5e3","name":"Verify that user has been locked out","time":{"start":1754598936373,"stop":1754598937848,"duration":1475},"status":"passed","severity":"critical"}]
