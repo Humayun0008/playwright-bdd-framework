@@ -109,6 +109,19 @@ npm run open:report
 ```
 
 ---
+## 🔍 Viewing Allure Report from Pipeline Artifacts
+
+After downloading the report artifact from your CI/CD pipeline:
+
+1. Unzip the downloaded artifact folder
+2. Open terminal in the unzipped report directory
+3. Run these commands:
+```bash
+npm install -g http-server  # Install HTTP server globally
+http-server -p 8000        # Start server on port 8000
+
+Open your browser at:
+👉 http://localhost:8000
 
 ## ✅ Best Practices Followed
 
