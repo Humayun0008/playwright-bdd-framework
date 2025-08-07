@@ -119,9 +119,11 @@ After downloading the report artifact from your CI/CD pipeline:
 ```bash
 npm install -g http-server  # Install HTTP server globally
 http-server -p 8000        # Start server on port 8000
-
+```
 Open your browser at:
 👉 http://localhost:8000
+
+---
 
 ## ✅ Best Practices Followed
 
